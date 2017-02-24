@@ -1,6 +1,9 @@
 import { Http, Response } from '@angular/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Resume } from '../Resume/classes/resume'
+import { Position } from "../Resume/classes/position";
+import { Technology } from "../Resume/classes/technology";
+import { Education } from "../Resume/classes/education";
 
 @Injectable()
 export class SearchService {
@@ -9,6 +12,8 @@ export class SearchService {
   
   private resumePath: string = './app/JsonFiles/';
   private baseResumeName: string = 'Positions.json';
+
+  private notFoundJson: Resume = new Resume( 0,	"Resume not found.",  new Array<Position>(),  new Array<Education>());
   
   private maps: Resume;
   
@@ -33,7 +38,9 @@ export class SearchService {
           this.mapsChanged.emit(this.maps);
           console.log( this.maps);
         },
-        err => console.log(err),
+        err => { console.log("Resume not found: " + err +  this.maps);
+          this.maps = this.notFoundJson;
+        },
         () =>  console.log("Done: " + this.maps)
       );
    }

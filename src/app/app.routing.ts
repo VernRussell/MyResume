@@ -10,7 +10,8 @@ const APP_ROUTES: Routes = [
   {path: 'resume/:name', component: ResumeComponent},
   {path: 'positions', component: PositionsComponent},
   {path: 'technology', component: TechnologyComponent},
-  {path: 'skills', component: SkillsComponent}
+  {path: 'skills', component: SkillsComponent},
+  {path: ':name', component: ResumeComponent}
 ];
 
 // export the router module with these routes added to it

@@ -25,6 +25,9 @@
     .lab {
         font-size: 15px; font-weight: bold; background-color: #ffb3b3;
     }
+    .nf {
+      font-size: 18px; font-weight: bold;
+    }
     hr {
         border: none;
         height: 1px;

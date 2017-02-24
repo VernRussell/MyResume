@@ -37,12 +37,16 @@ export class ResumeComponent implements OnInit, OnDestroy, DoCheck {
       this.name = params['name']; // (+) converts string 'id' to a number
     });
     this.resumeService.PullInResume(this.name);
+    console.log("Good Bye!");
   }
 
 
   // After resume is in, set up the data
   ngDoCheck(){
+       console.log(this.sub);
+       console.log(this.sub._subscriptions[0]);
        this.resumeService.SetupResume();
+       
   }
   
   generateArray(obj){

@@ -1,6 +1,6 @@
 import {Input, DoCheck} from '@angular/core';
 import { Position } from "./position";
-import { Technology } from ".technology";
+import { Technology } from "./technology";
 import { Education } from "./education";
 
 import 'rxjs/Rx';
@@ -32,6 +32,9 @@ export class Resume  {
     public techTasks: string[];
     public positionId: number;
     
+       constructor (public id: number, public name: string, public positions: Position[], public educations: Education[]) {
+   }
+   
     // So the app shows positions and job titles in the Position component
     // It shows technologies and associated tasks in the Technology component
     // I want to add a component that shows my summarized highlights
@@ -108,9 +111,7 @@ export class Resume  {
     // Completed some cleanup
     // Todo: get (7) out of dates, style 
      
-   constructor (public id: number, public name: string, public positions: Position[], public educations: Education[]) {
-   }
-   
+
   
 
 }
