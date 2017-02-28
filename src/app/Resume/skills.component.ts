@@ -42,15 +42,19 @@ export class SkillsComponent implements OnInit {
     console.log("Clicked");
     if (!isValid) return;
     var words = f.name.split(' ');
+    var size = 2;
     
     for (var i=0; i < words.length; i++){
       var toPut = words[i];
-      for (var j = i + 1; j < words.length && j < i + 5; j++){
-           if (this.wordList.indexOf(toPut) < 0){
+      for (var j = i + 1; j < words.length && j < i + size; j++){
+           if (this.wordList.indexOf(toPut) < 0 && toPut === toPut.toUpperCase()){
              this.wordList.push(toPut);
            }
-           if (j + 1 < words.length){
-            toPut += ' ' + words[j];
+           if (j + 1 < words.length && words[j] === words[j].toUpperCase()){
+            var ucWord = words[j].toUpperCase();
+            var word = words[j];
+            console.log(ucWord === word, word);
+            toPut += ' ' + words[j].toUpperCase();
            }
       }
     }
