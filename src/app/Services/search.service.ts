@@ -10,7 +10,7 @@ export class SearchService {
   
   constructor(private http: Http) {}
   
-  private resumePath: string = './app/JsonFiles/';
+  private resumePath: string = './src/app/JsonFiles/';
   private baseResumeName: string = 'Positions.json';
 
   private notFoundJson: Resume = new Resume( 0,	"Resume not found.",  new Array<Position>(),  new Array<Education>());
