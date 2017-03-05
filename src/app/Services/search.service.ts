@@ -29,7 +29,7 @@ export class SearchService {
   fetchResume(name: string) {
      if (!name) name="default";
      var jsonName = this.resumePath + name + this.baseResumeName;
-     console.log(jsonName);
+     console.log("Resume Path: " + jsonName);
      return this.http.get(jsonName)
             .map((response: Response) => response.json())
       .subscribe(
