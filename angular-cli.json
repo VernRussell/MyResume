@@ -1,6 +1,6 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0-beta.28.3",
     "name": "resume"
   },
   "apps": [
@@ -22,7 +22,7 @@
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
-     "environments": {
+      "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
@@ -35,11 +35,9 @@
   },
   "lint": [
     {
-      "files": "src/**/*.ts",
       "project": "src/tsconfig.json"
     },
     {
-      "files": "e2e/**/*.ts",
       "project": "e2e/tsconfig.json"
     }
   ],
